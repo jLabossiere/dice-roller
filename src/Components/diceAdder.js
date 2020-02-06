@@ -27,9 +27,13 @@ class DiceAdder extends React.Component {
 }
 
 const StyledDiceAdder = styled.div`
-  display: inline-block;
+  display: flex;
   width: 33%;
   margin: auto;
+  border: solid black 1px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 `
 
 export default DiceAdder
