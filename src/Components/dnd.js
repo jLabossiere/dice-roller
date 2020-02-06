@@ -12,35 +12,17 @@ class App extends React.Component {
     rollTotal: 0,
   }
 
-  addD4 = numToAdd => {
-    let newD4Num = this.state.d4Num + numToAdd
-    this.setState({ d4Num: newD4Num })
-  }
+  handleD4Change = diceNum => this.setState({ d4Num: diceNum })
 
-  addD6 = numToAdd => {
-    let newD6Num = this.state.d6Num + numToAdd
-    this.setState({ d6Num: newD6Num })
-  }
+  handleD6Change = diceNum => this.setState({ d6Num: diceNum })
 
-  addD8 = numToAdd => {
-    let newD8Num = this.state.d8Num + numToAdd
-    this.setState({ d8Num: newD8Num })
-  }
+  handleD8Change = diceNum => this.setState({ d8Num: diceNum })
 
-  addD10 = numToAdd => {
-    let newD10Num = this.state.d10Num + numToAdd
-    this.setState({ d10Num: newD10Num })
-  }
+  handleD10Change = diceNum => this.setState({ d10Num: diceNum })
 
-  addD12 = numToAdd => {
-    let newD12Num = this.state.d12Num + numToAdd
-    this.setState({ d12Num: newD12Num })
-  }
+  handleD12Change = diceNum => this.setState({ d12Num: diceNum })
 
-  addD20 = numToAdd => {
-    let newD20Num = this.state.d20Num + numToAdd
-    this.setState({ d20Num: newD20Num })
-  }
+  handleD20Change = diceNum => this.setState({ d20Num: diceNum })
 
   rollMyDice = () => {
     let returnValue = 0
@@ -76,12 +58,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <DiceAdder diceType='d4' addDice={this.addD4} />
-        <DiceAdder diceType='d6' addDice={this.addD6} />
-        <DiceAdder diceType='d8' addDice={this.addD8} />
-        <DiceAdder diceType='d10' addDice={this.addD10} />
-        <DiceAdder diceType='d12' addDice={this.addD12} />
-        <DiceAdder diceType='d20' addDice={this.addD20} />
+        <DiceAdder diceType='d4' handleDice={this.handleD4Change} />
+        <DiceAdder diceType='d6' handleDice={this.handleD6Change} />
+        <DiceAdder diceType='d8' handleDice={this.handleD8Change} />
+        <DiceAdder diceType='d10' handleDice={this.handleD10Change} />
+        <DiceAdder diceType='d12' handleDice={this.handleD12Change} />
+        <DiceAdder diceType='d20' handleDice={this.handleD20Change} />
         <button onClick={() => this.rollMyDice()}>Roll</button>
 
         <h2>{this.state.rollTotal}</h2>

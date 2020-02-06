@@ -7,9 +7,9 @@ class DiceAdder extends React.Component {
   }
 
   handleChange = e => {
-    this.setState({
-      numToAdd: e.target.value
-    })
+    this.setState({ numToAdd: Number.parseInt(e.target.value) },
+      () => this.props.handleDice(this.state.numToAdd)
+    )
   }
 
   render() {
@@ -21,10 +21,6 @@ class DiceAdder extends React.Component {
           onChange={this.handleChange}
           value={this.state.numToAdd}
         />
-        <button
-          onClick={() => this.props.addDice(Number.parseInt(this.state.numToAdd))}>
-          Add Dice
-          </button>
       </StyledDiceAdder>
     )
   }
@@ -32,7 +28,8 @@ class DiceAdder extends React.Component {
 
 const StyledDiceAdder = styled.div`
   display: inline-block;
-  width: 30%;
+  width: 33%;
+  margin: auto;
 `
 
 export default DiceAdder
