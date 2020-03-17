@@ -15,3 +15,5 @@ let Berserker = {
     },
   ]
 }
+
+export default Berserker

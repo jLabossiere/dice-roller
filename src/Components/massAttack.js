@@ -1,5 +1,6 @@
 import React from 'react'
 import MonAttack from './massMonAttack'
+import berserker from '../Creatures/Berserker'
 
 class MassAttack extends React.Component {
   state = {
