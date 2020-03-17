@@ -1,5 +1,6 @@
 import React from 'react';
 import DiceAdder from './diceAdder'
+import '../css/Container.css'
 import styled from 'styled-components';
 
 class DiceAccumulator extends React.Component {
@@ -54,19 +55,24 @@ class DiceAccumulator extends React.Component {
         <div>
           <Total>{this.state.rollTotal}</Total>
         </div>
-        <DiceAdder diceType='d4' handleDice={this.handleD4Change} />
-        <DiceAdder diceType='d6' handleDice={this.handleD6Change} />
-        <DiceAdder diceType='d8' handleDice={this.handleD8Change} />
-        <DiceAdder diceType='d10' handleDice={this.handleD10Change} />
-        <DiceAdder diceType='d12' handleDice={this.handleD12Change} />
-        <DiceAdder diceType='d20' handleDice={this.handleD20Change} />
-        <Button onClick={() => this.rollMyDice()}>Roll</Button>
+        <div className='DiceAdderContainer'>
+          <DiceAdder diceType='d4' handleDice={this.handleD4Change} />
+          <DiceAdder diceType='d6' handleDice={this.handleD6Change} />
+          <DiceAdder diceType='d8' handleDice={this.handleD8Change} />
+          <DiceAdder diceType='d10' handleDice={this.handleD10Change} />
+          <DiceAdder diceType='d12' handleDice={this.handleD12Change} />
+          <DiceAdder diceType='d20' handleDice={this.handleD20Change} />
+        </div>
+        <div>
+          <Button onClick={() => this.rollMyDice()}>Roll</Button>
+        </div>
       </div>
     )
   };
 }
 
 const Button = styled.button`
+  display: block;
   padding: 12px 32px;
   margin: auto;
 `

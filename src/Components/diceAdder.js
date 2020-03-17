@@ -20,6 +20,7 @@ class DiceAdder extends React.Component {
           type='number'
           onChange={this.handleChange}
           value={this.state.numToAdd}
+          min='0'
         />
       </StyledDiceAdder>
     )
@@ -28,7 +29,8 @@ class DiceAdder extends React.Component {
 
 const StyledDiceAdder = styled.div`
   display: flex;
-  width: 33%;
+  width: 30%;
+  min-width: 188px;
   margin: auto;
   border: solid black 1px;
   justify-content: space-around;

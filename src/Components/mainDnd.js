@@ -1,6 +1,7 @@
 import React from 'react'
 import DiceAccumulator from './diceAccumulator'
 import AttackCalculator from './attackCalculator'
+import MassAttack from './massAttack'
 import {
   BrowserRouter as Router,
   Link,
@@ -33,8 +34,12 @@ class MainDnd extends React.Component {
           <ul>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/attacks'>Attack</Link></li>
+            <li><Link to='/mass'>Mass Attacks</Link></li>
           </ul>
           <Switch>
+            <Route path='/mass'>
+              <MassAttack rollFuncs={this.DiceRollFuncs} />
+            </Route>
             <Route path='/attacks'>
               <AttackCalculator rollFuncs={this.DiceRollFuncs} />
             </Route>
