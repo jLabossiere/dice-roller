@@ -17,6 +17,8 @@ class MainDnd extends React.Component {
   rollD10 = () => Math.ceil(Math.random() * 10)
   rollD12 = () => Math.ceil(Math.random() * 12)
   rollD20 = () => Math.ceil(Math.random() * 20)
+  Adv = (roll1, roll2) => roll1 > roll2 ? roll1 : roll2
+  Dadv = (roll1, roll2) => roll1 < roll2 ? roll1 : roll2
 
   DiceRollFuncs = {
     rollD4: this.rollD4,
@@ -25,6 +27,8 @@ class MainDnd extends React.Component {
     rollD10: this.rollD10,
     rollD12: this.rollD12,
     rollD20: this.rollD20,
+    Adv: this.Adv,
+    Dadv: this.Dadv
   }
 
   render() {

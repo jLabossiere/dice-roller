@@ -14,6 +14,7 @@ class MassAttack extends React.Component {
       newMonsterArray.push(berserker)
     }
     this.setState({
+      addNum: 0,
       monsters: newMonsterArray
     })
   }
@@ -28,13 +29,16 @@ class MassAttack extends React.Component {
         <div>
           <input type='number'
             value={this.state.addNum}
+            min='0'
             onChange={this.handleAddNumChange} />
           <button onClick={e => this.addMonsters(e)}>Add Creatures</button>
         </div>
         <div>
           {
             this.state.monsters.map((ele, ind) => {
-              return <MonAttack monster={ele} key={ind} />
+              return <MonAttack monster={ele}
+                key={ind}
+                rollFuncs={this.props.rollFuncs} />
             })
           }
         </div>
