@@ -13,8 +13,8 @@ pipeline {
   stages {
     stage('Install Dependencies') {
       steps {
-        sh 'sudo apk update'
-        sh 'sudo apk add --update nodejs npm'
+        sh 'apk update'
+        sh 'apk add --update nodejs npm'
       }
     }
     stage('Build') {
