@@ -11,8 +11,8 @@ pipeline {
   stages {
     stage('Install Dependencies') {
       steps {
-        sh 'apk update'
-        sh 'apk add --update nodejs npm'
+        sh 'sudo apk update'
+        sh 'sudo apk add --update nodejs npm'
       }
     }
     stage('Build') {
