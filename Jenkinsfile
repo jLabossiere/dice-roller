@@ -7,7 +7,9 @@ pipeline {
   }
   environment {
     CI = 'true' 
+    HOME = '.'
   }
+
   stages {
     stage('Install Dependencies') {
       steps {
